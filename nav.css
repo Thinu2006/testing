@@ -1,0 +1,123 @@
+*{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+body{
+    min-height: 100vh;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 15px 30px 15px;
+    display: flex;
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+}
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,.5);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+.header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:  -100%;
+    width: 100%;
+    height: 100%;
+}
+.logo{   
+    width:160px;
+    height: 80px;
+    cursor: pointer;
+}
+.navbar a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffff;
+    font-weight: 600;  
+    font-size: 20px;
+    margin-left: 60px;
+}
+.navbar a:hover{
+    color: #9bd127;
+}  
+#check{
+    display: none;
+}
+.icons{
+    position: absolute;
+    right: 1%;
+    font-size: 2.8rem;
+    color: #ffff;
+    cursor: pointer;
+    display: none;
+}
+/*BREAKPOINT*/
+@media (max-width: 1160px){
+    .header{
+        padding: 5px 15px 5px 15px;
+    }
+    .navbar a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 1000px){
+    .logo{
+        width:110px;
+        height: 60px;
+        margin-right: auto;
+    }
+    .icons{
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+    .icons #close-icon{
+        display: none;
+    }
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background:rgba(0,0, 0, .3);
+        backdrop-filter: blur(50px);
+        box-shadow:0 .5rem 1rem rgba(0,0,0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar{
+        height: auto;
+    }
+    .navbar a{
+        display: block;
+        font-size: 16px;
+        padding: 0%;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+    #check:checked~.navbar a{
+        transform: translateY(0px);
+        transition-delay: calc(.15s * var(--i)) ;
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Wildlife Sri Lanka",
+    "short_name": "SLWildlife",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#32e385",
+    "theme_color": "#23c46f",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src":"icon512_maskable.png",
+            "type": "image/png",
+            "sizes": "180x180"
+    
+        },
+
+        {
+            "src":"icon512_rounded.png",
+            "type": "image/png",
+            "sizes": "196x196"
+
+        }
+    ]
+
+
+}
